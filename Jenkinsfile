@@ -16,11 +16,11 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 1
+                sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
             post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml' 2
+                    junit 'target/surefire-reports/**/*.xml'
                 }
             }
         }
